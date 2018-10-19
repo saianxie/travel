@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'user',
     'tripline',
     'log',
+    'order'
 ]
 
 MIDDLEWARE = [

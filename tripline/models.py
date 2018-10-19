@@ -33,6 +33,9 @@ class city(models.Model):
 class triptime(models.Model):
     time = models.CharField(max_length=10)
 
+class triptype(models.Model):
+    name= models.CharField(max_length=10)
+
 class tripline(models.Model):
     title = models.CharField(max_length=200)
     acount = models.CharField(max_length=10)
@@ -40,3 +43,11 @@ class tripline(models.Model):
     label = models.CharField(max_length=10)
     img = models.CharField(max_length=100)
     times = models.ManyToManyField(triptime)
+    types = models.ManyToManyField(triptype)
+
+# class view(models.Model):
+#     viewimage = models.CharField(max_length=50)
+
+
+
+
