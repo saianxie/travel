@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^addcountry/', views.add, name='add'),
     url(r'^gettimebytimeid\w*/(?P<timeid>\d*)/', views.gettime, name='gettime'),
     url(r'^getcountrybychauid\w*/(?P<chauid>\d*)/', views.getcountry, name='getcountry'),
-    url(r'^gettraveldata\w*/', views.gettraveldata, name='gettraveldata'),
+    url(r'^gettraveldata\w*/(?P<lineid>\d*)/', views.gettraveldata, name='gettraveldata'),
 ]

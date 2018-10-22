@@ -59,7 +59,8 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'localhost:63342',
     'localhost:63343',
-    'localhost:8081'
+    'localhost:8081',
+    'localhost:8080',
 )
 # 设置允许访问的方法
 CORS_ALLOW_HEADERS = (

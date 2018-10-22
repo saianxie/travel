@@ -45,9 +45,9 @@ def getcountry(request,chauid):
         return JsonResponse({"code": "error"})
 
 
-def gettraveldata(request):
+def gettraveldata(request,lineid):
     try:
-        traveldata = models.tripline.objects.filter().values()
+        traveldata=models.tripline.objects.filter(id=lineid).values()
         return HttpResponse(json.dumps(list(traveldata), ensure_ascii=False))
     except Exception as ex:
         return JsonResponse({"code": "error"})

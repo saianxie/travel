@@ -4,7 +4,6 @@ from django.db import models
 # Create your models here.
 
 
-
 class chau(models.Model):
     name = models.CharField(max_length=10)
 
@@ -17,6 +16,7 @@ class country(models.Model):
 class city(models.Model):
     name = models.CharField(max_length=20)
     country = models.ForeignKey("country", to_field="id", default=1, on_delete=models.CASCADE)
+
 
 #
 # class hotel(models.Model):
@@ -33,21 +33,26 @@ class city(models.Model):
 class triptime(models.Model):
     time = models.CharField(max_length=10)
 
+
 class triptype(models.Model):
-    name= models.CharField(max_length=10)
+    name = models.CharField(max_length=10)
+
+class hotelinfo(models.Model):
+    name = models.CharField(max_length=50)
+    englishname = models.CharField(max_length=50)
+
 
 class tripline(models.Model):
     title = models.CharField(max_length=200)
     acount = models.CharField(max_length=10)
+    pageview = models.CharField(max_length=10)
     price = models.CharField(max_length=10)
     label = models.CharField(max_length=10)
     img = models.CharField(max_length=100)
+    producttype = models.CharField(max_length=50, null=True)
     times = models.ManyToManyField(triptime)
     types = models.ManyToManyField(triptype)
+    hotels = models.ManyToManyField(hotelinfo)
 
 # class view(models.Model):
 #     viewimage = models.CharField(max_length=50)
-
-
-
-
